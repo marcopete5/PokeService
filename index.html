@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='pokeApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Pokeservice</title>
+
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css">
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js'></script>
+
+</head>
+<body ng-controller='mainController'>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-4">
+					<input type="text" class="form-control inputField" placeholder='New Pokemon Name' ng-model='newPoke'> 
+					<button type="button" class="btn btn-default" value="Add" ng-click='addPokemon(newPoke)'>Add</button>
+					<button type="button" class="btn btn-default" value="Delete" ng-click='removePokemon(newPoke)'>Delete</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4" >
+					<h1 ng-repeat='poke in pokemon track by $index'>{{poke}}</h1>
+					
+				</div>
+			</div>
+		</div>
+	
+	<script src='app.js'></script>
+	<script src='services/pokeService.js'></script>
+</body>
+</html>
